@@ -44,7 +44,7 @@ if (!isset($_SESSION['login'])) {
         <div class="card">
             <div class="card-header">Output</div>
             <?php
-            if(isset($_POST['smp'])){
+            if(isset($_POST['byr'])){
                 $nama = $_POST['nama'];
                 $alamat = $_POST['alamat'];
                 $tgl = $_POST['tgl'];
@@ -56,25 +56,13 @@ if (!isset($_SESSION['login'])) {
                 $peng = $_POST['peng'];
                 $jb = $_POST['jb'];
                 $har = $_POST['har'];
+
+                $num = $_POST['num'];
+                $total = $_POST['total'];
+                $kem = $num - $total;
+            
+            
             }
-            // if(isset($_POST['byr'])){
-            //     $nama = $_POST['nama'];
-            //     $alamat = $_POST['alamat'];
-            //     $tgl = $_POST['tgl'];
-            //     $jk = $_POST['jk'];
-            //     $jumlah = $_POST['jumlah'];
-
-            //     $judul = $_POST['judul'];
-            //     $kode = $_POST['kode'];
-            //     $peng = $_POST['peng'];
-            //     $jb = $_POST['jb'];
-            //     $har = $_POST['har'];
-
-            //     $num = $_POST['num'];
-            //     $total = $_POST['total'];
-            //     $kem = $num - $total;
-                
-            // }
             ?>
             <div class="card-body">
                 <div class="table-responsive">
@@ -115,7 +103,7 @@ if (!isset($_SESSION['login'])) {
                         </tr>
                         <?php endforeach; ?>
                     </table>
-                    <div class="form-control"><center>Pembayaran</center></div>
+                    <div class="form-control"><center>Total Pembayaran</center></div>
                     <table class="table">
                         <?php
                         $a = array_sum($har);
@@ -137,7 +125,7 @@ if (!isset($_SESSION['login'])) {
                         ?>
                         <tr>
                             <th>Sub Harga</th>
-                            <td align="right"><?= "Rp .$a"; ?></td>
+                            <td align="right"><?= "Rp. $a"; ?></td>
                         </tr>
                         <tr>
                             <th>Diskon<?= $e; ?></th>
@@ -148,36 +136,25 @@ if (!isset($_SESSION['login'])) {
                             <td align="right"><?= "Rp. $c"; ?></td>
                         </tr>
                     </table>
-                    
+                        <div class="form-control"><center>Pembayaran</center></div>
                     <table class="table">
-                    <form action="output2.php" method="post">
-                        <input type="hidden" name="total" value="<?= $c; ?>">
-                        <input type="hidden" name="nama" value="<?= $nama; ?>">
-                        <input type="hidden" name="alamat" value="<?= $alamat; ?>">
-                        <input type="hidden" name="tgl" value="<?= $tgl; ?>">
-                        <input type="hidden" name="jumlah" value="<?= $jumlah; ?>">
-                        <input type="hidden" name="jk" value="<?= $jk; ?>">
-                        <input type="hidden" name="judul[]" value="<?= $judul[$key]; ?>">
-                        <input type="hidden" name="kode[]" value="<?= $kode[$key]; ?>">
-                        <input type="hidden" name="peng[]" value="<?= $peng[$key]; ?>">
-                        <input type="hidden" name="jb[]" value="<?= $jb[$key]; ?>">
-                        <input type="hidden" name="har[]" value="<?= $har[$key]; ?>">
-
                         <tr>
-                            <th>Masukan Pembayaran</th>
-                            <th><input type="number" min="<?= $c; ?>" name="num" id="" placeholder="Masukan Pembayaran">
-                                <button type="submit" name="byr" class="btn btn-primary">Bayar</button>
-                            </th>
-                        </tr>    
-                        <!-- <tr>
                             <th>Bayar</th>
-                            <td align="right"><?= $num; ?></td>
+                            <td align="right"><?= "Rp. $num"; ?></td>
                         </tr>
                         <tr>
                             <th>Kembalian</th>
-                            <td align="right"><?= $kem; ?></td>
-                        </tr>          -->
-                    </form>
+                            <td align="right"><?= "Rp. $kem"; ?></td>
+                        </tr>
+                    </table>
+                    <div class="form-control"><center>Lanjut?</center></div>
+                    <table class="table">
+                        <tr>
+                            <td align="center">Mau Lanjut?</td>
+                            <td><a href="book-store.php"><input type="button" class="btn btn-success" value="Ya"></a>
+                            <td><a href="logout.php"><input type="button" class="btn btn-danger" value="Tidak"></a>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['login'])) {
+if (!isset($_SESSION['login'])) {
+  header("Location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,8 +110,3 @@ if (isset($_SESSION['login'])) {
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-<?php
-}else{
-    header("Location: login.php");
-}
-?>
