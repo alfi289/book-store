@@ -64,7 +64,7 @@ if (!isset($_SESSION['login'])) {
                   </div>
                   <div class="form-group">
                     <label for="">Jumlah Buku</label>
-                      <input type="number" name="jumlah" class="form-control" required>
+                      <input type="number" min="1" name="jumlah" class="form-control" required>
                   </div>
                   <div class="form-group">
                     <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>

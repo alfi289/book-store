@@ -131,6 +131,7 @@ if (!isset($_SESSION['login'])) {
                         }
                         else{
                             $b = 0;
+                            $e = "(0%)";
                             $c = $a - $b;
                         }
                         $_SESSION['$c'];

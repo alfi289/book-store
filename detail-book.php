@@ -90,14 +90,14 @@ if (!isset($_SESSION['login'])) {
                       <input type="number" name="har[]" class="form-control" required>
                   </div><hr>
                   
-            </div>
             <?php
                 }
             }
             ?>
-            <div class="form-group">
-                <button type="submit" name="smp" class="btn btn-primary">Simpan</button>
-                <button type="reset" class="btn btn-danger">Reset</button>
+                  <div class="form-group">
+                      <button type="submit" name="smp" class="btn btn-primary">Simpan</button>
+                      <button type="reset" class="btn btn-danger">Reset</button>
+                  </div>
             </div>
         </form>
         </div>

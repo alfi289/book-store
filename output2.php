@@ -147,6 +147,11 @@ if (!isset($_SESSION['login'])) {
                             <td align="right"><?= "Rp. $kem"; ?></td>
                         </tr>
                     </table>
+                    <div class="form-group">
+                        <div class="page-header"><h2 align="center">Terima Kasih Telah Berkunjung Ke Toko Kami!</h2><br>
+                        <h2 align="center">See You Next Again!!!</h2>
+                        </div>
+                    </div>
                     <div class="form-control"><center>Lanjut?</center></div>
                     <table class="table">
                         <tr>
